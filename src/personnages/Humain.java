@@ -6,7 +6,6 @@ public class Humain {
 	private int argent;
 	
 	public Humain(String nom, String boisson, int argent) {
-		super();
 		this.nom = nom;
 		this.boisson = boisson;
 		this.argent = argent;
@@ -20,8 +19,8 @@ public class Humain {
 		return argent;
 	}
 	
-	public void parler(String texte) {
-		System.out.println("(" + nom + ") - " + texte);
+	protected void parler(String texte) {
+		System.out.println("(" + this.nom + ") - " + texte);
 	}
 	
 	public void direBonjour() {
@@ -41,12 +40,12 @@ public class Humain {
 		}
 	}
 	
-	private void gagnerArgent(int gain) {
-		argent = argent + gain;
+	protected void gagnerArgent(int gain) {
+		this.argent = this.argent + gain;
 	}
 	
-	private void perdreArgent(int perte) {
-		argent = argent - perte;
+	protected void perdreArgent(int perte) {
+		this.argent = this.argent - perte;
 	}
 	
 }
